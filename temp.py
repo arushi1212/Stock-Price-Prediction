@@ -170,18 +170,6 @@ with features:
     # Set up our figure by naming it returns_fig, call PairPLot on the DataFrame
     returns_fig = sns.PairGrid(closing_df)
 
-    '''# Using map_upper we can specify what the upper triangle will look like.
-    returns_fig.map_upper(plt.scatter,color='purple')
-
-    # We can also define the lower triangle in the figure, inclufing the plot type (kde) or the color map (BluePurple)
-    returns_fig.map_lower(sns.kdeplot,cmap='cool_d')
-
-    # Finally we'll define the diagonal as a series of histogram plots of the daily return
-    returns_fig.map_diag(plt.hist,bins=30)
-    st.pyplot(returns_fig)
-
-    plt.figure(figsize=(12, 10))'''
-
     plt.subplot(2, 2, 1)
     sns.heatmap(tech_rets.corr(), annot=True, cmap='summer')
     plt.title('Correlation of stock return')
